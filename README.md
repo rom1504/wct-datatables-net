@@ -1,7 +1,7 @@
 # wct-datatables-net
 [![NPM version](https://img.shields.io/npm/v/wct-datatables-net.svg)](http://npmjs.com/package/wct-datatables-net)
 [![Build Status](https://img.shields.io/circleci/project/rom1504/wct-datatables-net/master.svg)](https://circleci.com/gh/rom1504/wct-datatables-net)
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/owner/wct-datatables-net)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/rom1504/wct-datatables-net)
 
 
 Web component for [datatables.net](https://datatables.net)
