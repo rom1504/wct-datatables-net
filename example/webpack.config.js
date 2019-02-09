@@ -9,11 +9,11 @@ const ENV = process.argv.find(arg => arg.includes('production'))
   ? 'production'
   : 'development'
 const OUTPUT_PATH = ENV === 'production' ? resolve('dist') : resolve('src')
-const INDEX_TEMPLATE = resolve('./example/index.html')
+const INDEX_TEMPLATE = resolve('./index.html')
 
 const commonConfig = merge([
   {
-    entry: './example/example-app.js',
+    entry: './example-app.js',
     output: {
       path: OUTPUT_PATH,
       filename: '[name].[chunkhash:8].js'

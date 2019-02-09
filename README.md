@@ -29,3 +29,5 @@ class ExampleApp extends LitElement {
 customElements.define('example-app', ExampleApp)
 ```
 
+Also see example/ folder
+
