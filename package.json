@@ -1,6 +1,6 @@
 {
   "name": "wct-datatables-net",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Datatables.net as a webcomponent",
   "main": "index.js",
   "module": "index.js",
