@@ -1,4 +1,4 @@
-/* globals customElements */
+/* globals customElements, CustomEvent */
 
 import { LitElement, html } from 'lit-element'
 
@@ -20,8 +20,8 @@ export default class DataTable extends LitElement {
       detail: {
         table: this.table
       }
-    });
-    this.dispatchEvent(event);
+    })
+    this.dispatchEvent(event)
   }
 
   render () {
