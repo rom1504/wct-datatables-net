@@ -10,6 +10,8 @@ Web component for [datatables.net](https://datatables.net)
 
 ## Usage
 
+Read [API](doc/API.md)
+
 Example of usage in a lit-element component :
 
 ```js
@@ -29,5 +31,4 @@ class ExampleApp extends LitElement {
 customElements.define('example-app', ExampleApp)
 ```
 
-Also see example/ folder
-
+Also see [example folder](example/)
