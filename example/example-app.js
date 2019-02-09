@@ -16,8 +16,8 @@ class ExampleApp extends LitElement {
         { title: 'office' },
         ],
        'data': [
-         ['a1', 'b2', 'c3', 'd4'],
-         ['a1', 'b2', 'c3', 'd4']
+         ['a1', 'b1', 'c1', 'd1'],
+         ['a2', 'b2', 'c2', 'd2']
         ] 
     }}></data-table>
   `
