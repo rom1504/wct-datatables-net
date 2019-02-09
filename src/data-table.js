@@ -16,6 +16,12 @@ export default class DataTable extends LitElement {
 
   firstUpdated () {
     this.table = $(this.shadowRoot.querySelector('#table')).DataTable(this.options)
+    let event = new CustomEvent('table-created', {
+      detail: {
+        table: this.table
+      }
+    });
+    this.dispatchEvent(event);
   }
 
   render () {
