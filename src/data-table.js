@@ -5,13 +5,21 @@ import { LitElement, html } from 'lit-element'
 import dataTablesCss from 'datatables.net-dt/css/jquery.dataTables.css'
 import $ from 'jquery'
 import 'datatables.net'
+import detailsOpen from './assets/details_open.png'
+import detailsClose from './assets/details_close.png'
 
 export default class DataTable extends LitElement {
   static get properties () {
     return {
       table: { type: Object },
-      options: { type: Object }
+      options: { type: Object },
+      detailControls: { type: Object }
     }
+  }
+
+  constructor () {
+    super()
+    this.detailsControls = {}
   }
 
   firstUpdated () {
@@ -21,12 +29,42 @@ export default class DataTable extends LitElement {
         table: this.table
       }
     })
+    this._enableDetailControls()
     this.dispatchEvent(event)
+  }
+
+  _enableDetailControls () {
+    Object.keys(this.detailsControls).forEach(className => {
+      const format = this.detailsControls[className]
+      const self = this
+      $(this.shadowRoot.querySelector('#table')).on('click', 'td.' + className, function () {
+        const tr = $(this).closest('tr')
+        const row = self.table.row(tr)
+
+        if (row.child.isShown()) {
+          // This row is already open - close it
+          row.child.hide()
+          tr.removeClass('shown')
+        } else {
+          // Open this row
+          row.child(format(row.data())).show()
+          tr.addClass('shown')
+        }
+      })
+    })
   }
 
   render () {
     return html`
-      <style>${dataTablesCss}</style>
+      <style>${dataTablesCss}
+      td.details-control {
+          background: url(${detailsOpen}) no-repeat center center;
+          cursor: pointer;
+      }
+      tr.shown td.details-control {
+          background: url(${detailsClose}) no-repeat center center;
+      }
+      </style>
       <table id="table"></table>
   `
   }

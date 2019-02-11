@@ -13,13 +13,21 @@ class ExampleApp extends LitElement {
       { title: 'name' },
       { title: 'position' },
       { title: 'salary' },
-      { title: 'office' }
+      { title: 'office' },
+      {
+        'className': 'details-control more',
+        'orderable': false,
+        'data': null,
+        'defaultContent': ''
+      }
     ],
     'data': [
-      ['a1', 'b1', 'c1', 'd1'],
-      ['a2', 'b2', 'c2', 'd2']
+      ['a1', 'b1', 'c1', 'd1', 'e1'],
+      ['a2', 'b2', 'c2', 'd2', 'e2']
     ]
-  }} @table-created=${e => console.log(e.detail.table)}></data-table>
+  }} @table-created=${e => console.log(e.detail.table)}
+     .detailsControls=${{ 'more': (rowData) => `<p>${rowData[4]}</p>` }}
+     ></data-table>
   `
   }
 }

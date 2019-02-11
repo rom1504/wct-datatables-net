@@ -12,6 +12,10 @@ construction options for the table, see [datatables options](https://datatables.
 
 Expose the datatables object, see [datatables api](https://datatables.net/manual/api) for the full API
 
+### detailsControls
+
+Optional property, a mapping of className to function taking the row and returning the html to display.
+
 ## Events
 
 ### table-created
