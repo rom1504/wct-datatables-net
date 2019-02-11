@@ -3,6 +3,11 @@
 import { LitElement, html } from 'lit-element'
 
 import dataTablesCss from 'datatables.net-dt/css/jquery.dataTables.css'
+import bootstrapCss from 'bootstrap/dist/css/bootstrap.css'
+import bootstrapDT from 'datatables.net-bs4/css/dataTables.bootstrap4.css'
+import 'bootstrap'
+import 'popper.js'
+import 'datatables.net-bs4'
 import $ from 'jquery'
 import 'datatables.net'
 import detailsOpen from './assets/details_open.png'
@@ -57,6 +62,8 @@ export default class DataTable extends LitElement {
   render () {
     return html`
       <style>${dataTablesCss}
+      ${bootstrapCss}
+      ${bootstrapDT}
       td.details-control {
           background: url(${detailsOpen}) no-repeat center center;
           cursor: pointer;
@@ -65,7 +72,7 @@ export default class DataTable extends LitElement {
           background: url(${detailsClose}) no-repeat center center;
       }
       </style>
-      <table id="table"></table>
+      <table id="table" class="table table-striped table-bordered" style="width:100%"></table>
   `
   }
 }

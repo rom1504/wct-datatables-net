@@ -28,7 +28,7 @@ const commonConfig = merge([
           ]
         },
         {
-          test: /\.png$/,
+          test: /\.(png|ttf|woff2|woff|eot|svg)$/,
           use: [
             'file-loader'
           ]
