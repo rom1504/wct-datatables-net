@@ -15,6 +15,7 @@ Expose the datatables object, see [datatables api](https://datatables.net/manual
 ### detailsControls
 
 Optional property, a mapping of className to function taking the row and returning the html to display.
+Can be used to produce something like [row details example](https://datatables.net/examples/api/row_details.html)
 
 ## Events
 
