@@ -1,6 +1,6 @@
 /* globals customElements, CustomEvent */
 
-import { LitElement, html } from 'lit-element'
+import { LitElement, html, css, unsafeCSS } from 'lit-element'
 
 import dataTablesCss from 'datatables.net-dt/css/jquery.dataTables.css'
 import bootstrapCss from 'bootstrap/dist/css/bootstrap.css'
@@ -69,21 +69,25 @@ export default class DataTable extends LitElement {
     })
   }
 
-  render () {
-    return html`
-      <style>${dataTablesCss}
-      ${bootstrapCss}
-      ${bootstrapDT}
+  static get styles () {
+    return [
+      unsafeCSS(dataTablesCss),
+      unsafeCSS(bootstrapCss),
+      unsafeCSS(bootstrapDT),
+      css`
       td.details-control {
-          background: url(${detailsOpen}) no-repeat center center;
+          background: url(${unsafeCSS(detailsOpen)}) no-repeat center center;
           cursor: pointer;
       }
       tr.shown td.details-control {
-          background: url(${detailsClose}) no-repeat center center;
+          background: url(${unsafeCSS(detailsClose)}) no-repeat center center;
       }
-      </style>
-      <table id="table" class="table table-striped table-bordered" style="width:100%"></table>
-  `
+      `
+    ]
+  }
+
+  render () {
+    return html`<table id="table" class="table table-striped table-bordered" style="width:100%"></table>`
   }
 }
 
