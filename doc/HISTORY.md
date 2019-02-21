@@ -1,3 +1,7 @@
+## 1.4.1
+
+* use styles property
+
 ## 1.4.0
 
 * add possibility to reset the table by changing the properties
