@@ -18,7 +18,7 @@ export default class DataTable extends LitElement {
     return {
       table: { type: Object },
       options: { type: Object },
-      detailControls: { type: Object }
+      detailsControls: { type: Object }
     }
   }
 
@@ -27,15 +27,25 @@ export default class DataTable extends LitElement {
     this.detailsControls = {}
   }
 
-  firstUpdated () {
-    this.table = $(this.shadowRoot.querySelector('#table')).DataTable(this.options)
-    let event = new CustomEvent('table-created', {
-      detail: {
-        table: this.table
-      }
-    })
-    this._enableDetailControls()
-    this.dispatchEvent(event)
+  updated (changedProperties) {
+    if (changedProperties.has('options')) {
+      this.table = $(this.shadowRoot.querySelector('#table')).DataTable(this.options)
+      let event = new CustomEvent('table-created', {
+        detail: {
+          table: this.table
+        }
+      })
+      this.dispatchEvent(event)
+    }
+
+    if (this.options !== undefined && (changedProperties.has('options') || changedProperties.has('detailsControls'))) {
+      this._disableDetailControls()
+      this._enableDetailControls()
+    }
+  }
+
+  _disableDetailControls () {
+    $(this.shadowRoot.querySelector('#table')).off('click')
   }
 
   _enableDetailControls () {
