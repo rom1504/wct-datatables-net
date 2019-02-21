@@ -1,3 +1,7 @@
+## 1.4.0
+
+* add possibility to reset the table by changing the properties
+
 ## 1.3.0
 
 * use bootstrap 4 theme
