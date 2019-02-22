@@ -2,7 +2,6 @@
 
 import { LitElement, html, css, unsafeCSS } from 'lit-element'
 
-import dataTablesCss from 'datatables.net-dt/css/jquery.dataTables.css'
 import bootstrapCss from 'bootstrap/dist/css/bootstrap.css'
 import bootstrapDT from 'datatables.net-bs4/css/dataTables.bootstrap4.css'
 import 'bootstrap'
@@ -71,7 +70,6 @@ export default class DataTable extends LitElement {
 
   static get styles () {
     return [
-      unsafeCSS(dataTablesCss),
       unsafeCSS(bootstrapCss),
       unsafeCSS(bootstrapDT),
       css`
