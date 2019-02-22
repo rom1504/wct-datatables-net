@@ -1,3 +1,7 @@
+## 1.4.2
+
+* remove datatables.net-dt that was breaking css a bit
+
 ## 1.4.1
 
 * use styles property
