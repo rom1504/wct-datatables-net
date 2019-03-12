@@ -7,7 +7,7 @@ import '..'
 class UpdatingTable extends LitElement {
   static get properties () {
     return {
-      tableOptions: { type: String }
+      tableOptions: { type: Object }
     }
   }
 
@@ -28,8 +28,7 @@ class UpdatingTable extends LitElement {
         }
       ],
       'data': [
-        ['a1', 'b1' + Math.floor(Math.random() * 100), 'c1', 'd1', 'e1'],
-        ['a2', 'b2', 'c2', 'd2', 'e2']
+        ...[...Array(Math.floor(Math.random() * 100)).keys()].map(() => [...Array(5).keys()].map(() => Math.floor(Math.random() * 100)))
       ]
     }
   }
