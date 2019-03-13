@@ -1,3 +1,7 @@
+## 1.4.3
+
+* flush table when refreshing
+
 ## 1.4.2
 
 * remove datatables.net-dt that was breaking css a bit
