@@ -1,3 +1,7 @@
+## 1.4.4
+
+* check that options is not undefined
+
 ## 1.4.3
 
 * flush table when refreshing
