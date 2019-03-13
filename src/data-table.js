@@ -27,7 +27,7 @@ export default class DataTable extends LitElement {
   }
 
   updated (changedProperties) {
-    if (changedProperties.has('options')) {
+    if (changedProperties.has('options') && this.options !== undefined) {
       if (this.table !== undefined) {
         this.table.destroy()
         $('#table').html('')
@@ -41,7 +41,7 @@ export default class DataTable extends LitElement {
       this.dispatchEvent(event)
     }
 
-    if (this.options !== undefined && (changedProperties.has('options') || changedProperties.has('detailsControls'))) {
+    if (this.options !== undefined && this.detailsControls !== undefined && (changedProperties.has('options') || changedProperties.has('detailsControls'))) {
       this._disableDetailControls()
       this._enableDetailControls()
     }
