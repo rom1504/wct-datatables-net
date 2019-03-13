@@ -28,7 +28,7 @@ export default class DataTable extends LitElement {
 
   updated (changedProperties) {
     if (changedProperties.has('options')) {
-      if(this.table !== undefined) {
+      if (this.table !== undefined) {
         this.table.destroy()
         $('#table').html('')
       }
